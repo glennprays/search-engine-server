@@ -26,7 +26,7 @@ class SearchUseCase:
         query_tfidf = tfidf.calculate_tfidf([preprocessed_query], tfidf.calculate_tf([preprocessed_query]), docs_idf)[0]
 
         result = self.find_matching_documents(query_tfidf, docs_tfidf)
-        result = [tupel for tupel in result if tupel[1] > 0.0999]
+        result = [tupel for tupel in result if tupel[1] >= 0.1]
         documents = []
         for tupel in result:
             if tupel[1] > 0.0999:
