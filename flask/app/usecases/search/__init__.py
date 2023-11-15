@@ -13,11 +13,11 @@ json_file = JsonFileManager()
 tfidf = TFIDFCalculator()
 
 
-docs_preprocessed = json_file.load_json("./tfidf/docs_preprocessed.json")
-docs_list = json_file.load_json("./tfidf/docs_list.json")
-docs_tf = json_file.load_json("./tfidf/docs_tf.json")
-docs_idf = json_file.load_json("./tfidf/docs_idf.json")
-docs_tfidf = json_file.load_json("./tfidf/docs_tfidf.json")
+docs_preprocessed = json_file.load_json("./search-data/docs_preprocessed.json")
+docs_list = json_file.load_json("./search-data/docs_list.json")
+docs_tf = json_file.load_json("./search-data/docs_tf.json")
+docs_idf = json_file.load_json("./search-data/docs_idf.json")
+docs_tfidf = json_file.load_json("./search-data/docs_tfidf.json")
 
 class SearchUseCase:
     def search_query(self, query):
