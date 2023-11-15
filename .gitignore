@@ -162,5 +162,5 @@ cython_debug/
 .DS_Store
 .vscode
 
-# flask/documents/
-# flask/tf-idf
+flask/documents/
+flask/tf-idf
