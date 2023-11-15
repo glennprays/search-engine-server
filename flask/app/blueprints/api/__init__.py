@@ -1,6 +1,8 @@
-from flask import Blueprint, jsonify, request, render_template_string
+from flask import Blueprint, request, render_template_string
+from app.usecases.search import SearchUseCase
 
 bp = Blueprint("api", __name__, url_prefix="/api")
+search_ucs = SearchUseCase()
 
 @bp.route("/")
 def index():
@@ -9,7 +11,7 @@ def index():
 @bp.route("/search")
 def search_query():
     query_param = request.args.get('q', default='', type=str)
-    return jsonify({"query": query_param})
+    return search_ucs.search_query(query_param)
 
 @bp.route("/documents/<filename>")
 def open_file(filename):
