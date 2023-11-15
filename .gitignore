@@ -163,4 +163,5 @@ cython_debug/
 .vscode
 
 flask/documents/
-# flask/tfidf/
+
+flask/tfidf/
