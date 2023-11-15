@@ -164,4 +164,4 @@ cython_debug/
 
 flask/documents/
 
-flask/tfidf/
+flask/search-data/
