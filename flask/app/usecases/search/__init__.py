@@ -5,6 +5,7 @@ from .preprocess import Preprocess
 from .json_file import JsonFileManager
 from .tfidf import TFIDFCalculator
 from urllib.parse import quote
+import os
 
 
 preprocess = Preprocess()
@@ -29,8 +30,15 @@ class SearchUseCase:
         documents = []
         for tupel in result:
             if tupel[1] > 0.0999:
+                filename = docs_list[tupel[0]]
+                filepath = os.path.join('./documents/',filename)
+                with open(filepath, "r", encoding="utf-8", errors="ignore") as file:
+                    snippet = file.read(150)
+
                 temp = {
-                    "url": quote("/api/documents/"+docs_list[tupel[0]]),
+                    "snippet": snippet,
+                    "filename": filename,
+                    "url": quote("/api/documents/"+filename),
                     "consine_similarity": tupel[1]
                 }
                 documents.append(temp)
