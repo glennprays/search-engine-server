@@ -1,3 +1,4 @@
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 # Search Engine
 This program is a search engine that utilizes TF-IDF and Cosine Similarity methods for information retrieval.
 
